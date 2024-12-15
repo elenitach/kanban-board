@@ -5,6 +5,6 @@
 
 [https://kanban-board-bay-ten.vercel.app/](https://kanban-board-bay-ten.vercel.app/)
 
-### npm run dev
+### `npm run dev`
 
 Локальный запуск в дев-режиме. Приложение доступно по адресу http://localhost:3000.
