@@ -23,9 +23,11 @@ export const AddDocumentTextarea: FC<Props> = ({ onAddDocument, onClose }) => {
       ref={ref}
       onChange={onChange}
       onKeyDown={(event) => {
-        if (event.key === "Enter" && value) {
+        if (event.key === "Enter") {
           event.preventDefault();
-          onAddDocument(value);
+          if (value.trim()) {
+            onAddDocument(value);
+          }
           setValue("");
         }
       }}
