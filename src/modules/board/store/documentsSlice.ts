@@ -31,9 +31,11 @@ export const documentsSlice = createSlice({
       state,
       { payload }: PayloadAction<Pick<Document, "id" | "status">>
     ) => {
-      const document = state.documents.find((item) => item.id === payload.id);
-      if (document) {
-        document.status = payload.status;
+      const index = state.documents.findIndex((item) => item.id === payload.id);
+      if (index !== -1) {
+        state.documents[index].status = payload.status;
+        const deletedDocs = state.documents.splice(index, 1)
+        state.documents.push(deletedDocs[0])
       }
     },
     addDocument: (

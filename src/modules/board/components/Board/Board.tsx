@@ -15,7 +15,7 @@ export const Board: FC = () => {
   }, [dispatch]);
 
   return (
-    <Stack direction="row" gap={6} p={4} justifyContent="center">
+    <Stack direction="row" gap={6} p={4} justifyContent="center" alignItems='start'>
       <Column withAddButton status={Statuses.InProgress} title="В работе" />
       <Column status={Statuses.Review} title="На проверке" />
       <Column status={Statuses.Completed} title="Завершено" />

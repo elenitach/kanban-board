@@ -1,5 +1,6 @@
 import { StoreProvider } from "@/Providers/StoreProvider";
 import "./globals.css";
+import { DnDProvider } from "@/Providers/DnDProvider";
 
 export default function RootLayout({
   children,
@@ -8,9 +9,11 @@ export default function RootLayout({
 }>) {
   return (
     <StoreProvider>
-      <html lang="en">
-        <body>{children}</body>
-      </html>
+      <DnDProvider>
+        <html lang="en">
+          <body>{children}</body>
+        </html>
+      </DnDProvider>
     </StoreProvider>
   );
 }
